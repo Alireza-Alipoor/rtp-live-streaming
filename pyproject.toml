@@ -1,0 +1,17 @@
+[project]
+name = "rtp-live-streaming"
+version = "0.1.0"
+description = "A Python-based real-time audio and video streaming system using custom RTP/RTCP implementation over UDP, with dynamic codec switching, jitter buffering, and network performance analysis."
+readme = "README.md"
+authors = [
+    { name = "Alireza", email = "thealipoor@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+rtp-live-streaming = "rtp_live_streaming:main"
+
+[build-system]
+requires = ["uv_build>=0.11.31,<0.12.0"]
+build-backend = "uv_build"
