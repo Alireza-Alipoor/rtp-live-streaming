@@ -3,11 +3,11 @@ name = "rtp-live-streaming"
 version = "0.1.0"
 description = "A Python-based real-time audio and video streaming system using custom RTP/RTCP implementation over UDP, with dynamic codec switching, jitter buffering, and network performance analysis."
 readme = "README.md"
-authors = [
-    { name = "Alireza", email = "thealipoor@gmail.com" }
-]
+authors = [{ name = "Alireza", email = "thealipoor@gmail.com" }]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "av>=19.0.2",
+]
 
 [project.scripts]
 rtp-live-streaming = "rtp_live_streaming:main"
@@ -38,12 +38,12 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = [
-    "E",    # pycodestyle errors
-    "F",    # Pyflakes
-    "W",    # pycodestyle warnings
-    "I",    # Import sorting
-    "UP",   # Python modernization
-    "B",    # Bugbear
+    "E",  # pycodestyle errors
+    "F",  # Pyflakes
+    "W",  # pycodestyle warnings
+    "I",  # Import sorting
+    "UP", # Python modernization
+    "B",  # Bugbear
 ]
 ignore = []
 
@@ -55,12 +55,5 @@ line-ending = "auto"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
-addopts = [
-    "-ra",
-    "--strict-markers",
-    "--strict-config",
-]
-markers = [
-    "unit: Unit tests",
-    "integration: Integration tests",
-]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+markers = ["unit: Unit tests", "integration: Integration tests"]
